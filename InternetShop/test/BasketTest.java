@@ -10,11 +10,13 @@ public class BasketTest {
 	
 	@Before
 	public void setUp() {
+		System.out.println("Przygotowywanie koszyka");
 		basket = new Basket();
 	}
 	
 	@After
 	public void tearDown() {
+		System.out.println("Usuwanie koszyka");
 		basket = null;
 	}
 	
@@ -38,8 +40,9 @@ public class BasketTest {
 		
 		basket.addItem(testItem1.getName(), testItem1.getPrice());
 		basket.addItem(testItem2.getName(), testItem2.getPrice());
-		assertTrue(basket.getItem(testItemName).getCount() > 1);
+		assertTrue(basket.getItem(testItemName).getCount() == 2);
 	}
+	
 	@Test
 	public void testRemoveItem() {
 		fail("Not yet implemented");
